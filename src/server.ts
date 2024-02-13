@@ -1,6 +1,5 @@
 import express from "express";
 import dotenv from "dotenv"
-import JsonWebToken from "./src/middlewares/JsonWebToken";
 
 dotenv.config()
 
@@ -9,8 +8,7 @@ const app = express();
 const PORT = process.env.APP_PORT || 4000;
 
 app.get("/", (req, res) => {
-    let test = JsonWebToken.auth(req.body)
-    console.log(test);
+    res.status(200).send("Bonjour")
     
 });
 
